@@ -1,10 +1,14 @@
 .carusel {
 	width: 400px;
 	height: 300px;
-	margin: 0 auto;
 	overflow: hidden;
 	border: 5px solid violet;
 	border-radius: 5px;
+   float:left;
+}
+.caruselWithControls {
+	width: 550px;
+	margin: 0 auto;
 }
 .carusel ul {
 	list-style-type: none;
@@ -21,4 +25,10 @@
 .carusel img {
 	width: 400px;
 	height: 300px;
+}
+#left, #right {
+   display: inline;
+   float:left;
+   position:relative;
+   margin: 125px 10px 0;
 }
