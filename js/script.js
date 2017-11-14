@@ -21,20 +21,16 @@ $(function() {
         });
     };
 
-    var interval = setInterval(function() {
-        karuzela.animate({
-            marginLeft: "-400px"
-        }, 1500, moveFirstSlide)
-    }, 3000);
-
+    var interval;
 
     function afterBreak() {
-        setInterval(function() {
+        interval = setInterval(function() {
             karuzela.animate({
                 marginLeft: "-400px"
             }, 1500, moveFirstSlide)
         }, 3000)
     };
+    afterBreak();
 
     $('#right').click(function() {
         clearInterval(interval);
@@ -43,16 +39,16 @@ $(function() {
         }, 500, moveFirstSlide);
         setTimeout(afterBreak, 4000);
     });
-   
+
     $('#left').click(function() {
         clearInterval(interval);
+
+        moveLastSlide();
+
         karuzela.animate({
             marginLeft: "0"
-        }, 500, moveLastSlide);
+        }, 500);
         setTimeout(afterBreak, 4000);
     });
-
-
-
 
 });
